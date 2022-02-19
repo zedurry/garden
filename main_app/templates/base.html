@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emperor's Garden</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+</head>
+
+<body>
+    <header class="navbar-fixed ">
+        <nav>
+            <div class="nav-wrapper green darken-3">
+                <ul>
+                    <li>
+                        <a href="/" class="left brand-logo">&nbsp;&nbsp;Emperor's Garden</a>
+                    </li>
+                </ul>
+                <ul class="right">
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'index' %}">View All Plants</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer class="page-footer green darken-3">
+        <div class="right">
+            Emperor's Garden, &copy; 2022 Dr. Elias Durry approved &nbsp;
+        </div>
+    </footer>
+</body>
+
+</html>
