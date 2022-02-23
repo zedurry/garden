@@ -1,35 +1,54 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<h1>Spring  Season</h1>
-
-<div >
-    <h2>Look out for these in bloom!</h2>
-{% for plant in bloom %}
-<div class="card">
-    <a href="{% url 'detail' plant.id %}">
-        <div class="card-content">
-            <span class="card-title">{{ plant.name }}</span>
-            <p>Scientific Name: {{ plant.scientific_name }}</p>
-            <p>Description: {{ plant.description }}</p>
-        </div>
-    </a>
-</div>
-{% endfor %}
-</div>
-<div >
-    <h2>Be sure to trim these!</h2>
-{% for plant in trim %}
-<div class="card">
-    <a href="{% url 'detail' plant.id %}">
-        <div class="card-content">
-            <span class="card-title">{{ plant.name }}</span>
-            <p>Scientific Name: {{ plant.scientific_name }}</p>
-            <p>Description: {{ plant.description }}</p>
-        </div>
-    </a>
-</div>
-{% endfor %}
+<div class="row">
+    <div class="col s12">
+        <h1>Summer Season</h1>
+    </div>
+    <div class="col s6">
+        <h4>Look out for these in bloom!</h4>
+        <table >
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Scientific Name</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for plant in bloom %}
+                <tr>
+                    <a href="{% url 'detail' plant.id %}">
+                        <td>{{ plant.name }}</td>
+                    </a>
+                        <td>{{ plant.scientific_name }}</td>
+                        <td>{{ plant.type }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="col s6">
+        <h4>Be sure to trim these!</h4>
+        <table class="highlight">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Scientific Name</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for plant in trim %}
+                <a href="{% url 'detail' plant.id %}">
+                    <tr>
+                        <td>{{ plant.name }}</td>
+                        <td>{{ plant.scientific_name }}</td>
+                        <td>{{ plant.type }}</td>
+                    </tr>
+                </a>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 {% endblock %}
-

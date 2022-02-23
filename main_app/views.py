@@ -33,6 +33,21 @@ def spring(request):
     trim = Plant.objects.all().filter(trim_season='SPG')
     return render(request, 'plants/seasons/spring.html', { 'bloom': bloom, 'trim': trim })
 
+def summer(request):
+    bloom = Plant.objects.all().filter(bloom_season='SUM')
+    trim = Plant.objects.all().filter(trim_season='SUM')
+    return render(request, 'plants/seasons/summer.html', { 'bloom': bloom, 'trim': trim })
+
+def winter(request):
+    bloom = Plant.objects.all().filter(bloom_season='WIN')
+    trim = Plant.objects.all().filter(trim_season='WIN')
+    return render(request, 'plants/seasons/winter.html', { 'bloom': bloom, 'trim': trim })
+
+def fall(request):
+    bloom = Plant.objects.all().filter(bloom_season='FLL')
+    trim = Plant.objects.all().filter(trim_season='FLL')
+    return render(request, 'plants/seasons/fall.html', { 'bloom': bloom, 'trim': trim })
+
 
 def signup(request):
     error_message = ''

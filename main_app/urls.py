@@ -12,5 +12,8 @@ urlpatterns = [
     path('accounts/signup/', views.signup, name='signup'),
     path('plants/seasons/', views.seasons, name='seasons'),
     path('plants/seasons/spring/', views.spring, name='spring'),
+    path('plants/seasons/summer/', views.summer, name='summer'),
+    path('plants/seasons/winter/', views.winter, name='winter'),
+    path('plants/seasons/fall/', views.fall, name='fall'),
 
 ]
