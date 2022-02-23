@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Spring  Season</h1>
+
+<div >
+    <h2>Look out for these in bloom!</h2>
+{% for plant in bloom %}
+<div class="card">
+    <a href="{% url 'detail' plant.id %}">
+        <div class="card-content">
+            <span class="card-title">{{ plant.name }}</span>
+            <p>Scientific Name: {{ plant.scientific_name }}</p>
+            <p>Description: {{ plant.description }}</p>
+        </div>
+    </a>
+</div>
+{% endfor %}
+</div>
+<div >
+    <h2>Be sure to trim these!</h2>
+{% for plant in trim %}
+<div class="card">
+    <a href="{% url 'detail' plant.id %}">
+        <div class="card-content">
+            <span class="card-title">{{ plant.name }}</span>
+            <p>Scientific Name: {{ plant.scientific_name }}</p>
+            <p>Description: {{ plant.description }}</p>
+        </div>
+    </a>
+</div>
+{% endfor %}
+</div>
+{% endblock %}
+
+<!-- list( filter(lambda plant: plant.bloom_season != 'SPG', plants)) -->

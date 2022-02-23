@@ -1,5 +1,7 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
+
 
 
 # Create your models here.
@@ -44,6 +46,8 @@ class Plant(models.Model):  # Note that parens are optional if not inheriting fr
     description = models.CharField(max_length=100)
     height = models.CharField(max_length=100)
     spread = models.CharField(max_length=100)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
 
     def __str__(self):
         return self.name

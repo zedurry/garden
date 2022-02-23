@@ -9,12 +9,17 @@ body {
     min-height: 100vh;
     flex-direction: column;
 }
-  
+
 main {
     flex: 1 0 auto;
 }
-  
+
 footer {
     padding-top: 0;
     text-align: right;
+}
+.about_p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
 }
