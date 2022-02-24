@@ -1,3 +1,9 @@
+@font-face {
+    font-family: leaves;
+    src: url(../fonts/leaves_and_ground.ttf);
+}
+
+
 *{
     box-sizing: border-box;
     margin: 0
@@ -22,4 +28,18 @@ footer {
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 10px;
+}
+
+.home {
+    border-radius: 2%;
+}
+
+.page-title {
+    text-align: center;
+    font-family: leaves;
+}
+
+.season-head {
+    font-family: leaves;
+    text-align: center;
 }

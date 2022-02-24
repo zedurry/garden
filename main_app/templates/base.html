@@ -10,6 +10,7 @@
     <title>Emperor's Garden</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -18,6 +19,19 @@
 
 <body>
     <header class="navbar-fixed ">
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'index' %}">View All Plants</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'plants_create' %}">Add a Plant</a></li>
+            <li class="divider" tabindex="-1"></li>
+            <li><a href="{% url 'logout' %}">Log Out</a></li>
+            {% else %}
+            <li class="divider" tabindex="-1"></li>
+            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+            <li><a href="{% url 'login' %}">Log In</a></li>
+            {% endif %}
+        </ul>
         <nav>
             <div class="nav-wrapper green darken-3">
                 <ul>
@@ -25,10 +39,9 @@
                         <a href="/" class="left brand-logo">&nbsp;&nbsp;Emperor's Garden</a>
                     </li>
                 </ul>
-                <ul class="right">
+                <ul class="right hide-on-small-only">
                     <li><a href="{% url 'about' %}">About</a></li>
                     <li><a href="{% url 'index' %}">View All Plants</a></li>
-                    <li><a href="{% url 'seasons' %}">Seasons</a></li>
                     {% if user.is_authenticated %}
                     <li><a href="{% url 'plants_create' %}">Add a Plant</a></li>
                     <li><a href="{% url 'logout' %}">Log Out</a></li>
@@ -36,6 +49,13 @@
                     <li><a href="{% url 'signup' %}">Sign Up</a></li>
                     <li><a href="{% url 'login' %}">Log In</a></li>
                     {% endif %}
+                </ul>
+                <ul class="right hide-on-med-and-up">
+                    <li>
+                        <a class="dropdown-trigger" href="#" data-target="dropdown1">
+                            <i class="material-icons">more_vert</i>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -50,5 +70,12 @@
         </div>
     </footer>
 </body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.dropdown-trigger');
+        var instances = M.Dropdown.init(elems, (hover=false));
+    });
+</script>
 
 </html>

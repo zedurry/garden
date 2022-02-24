@@ -1,8 +1,57 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Home</h1>
+<h2 class="page-title ">
+    < Emperor's Garden >
+</h2>
+<div class="row">
+    <div class="col s10 offset-s1">
+        <img src="https://i.postimg.cc/SK7mD39Q/IMG-20200416-WA0002.jpg" alt="" class="responsive-img home">
+    </div>
+</div>
 <hr />
-<p>This is Home</p>
+<div class="row">
+    <div class="col s6">
+        <div class="card">
+            <div class="card-image">
+                <img src="https://i.postimg.cc/63WtScVr/20210923-141051.jpg"> 
+            </div>
+            <div class="card-action">
+                <a href="{% url 'spring' %}">Spring</a>
+            </div>
+        </div> 
+    </div>
+    <div class="col s6">
+        <div class="card">
+            <div class="card-image">
+                <img src="https://i.postimg.cc/mrwGQMxt/IMG-20211023-WA0003.jpg"> 
+            </div>
+            <div class="card-action">
+                <a href="{% url 'summer' %}">Summer</a>
+            </div>
+        </div> 
+    </div>
+</div>
+<div class="row">
+    <div class="col s6">
+        <div class="card">
+            <div class="card-image">
+                <img src="https://i.postimg.cc/qBmMPP5z/IMG-20200409-WA0001.jpg"> 
+            </div>
+            <div class="card-action">
+                <a href="{% url 'fall' %}">Fall</a>
+            </div>
+        </div> 
+    </div>
+    <div class="col s6">
+        <div class="card">
+            <div class="card-image">
+                <img src="https://i.postimg.cc/7YdP6gD4/IMG-20200409-WA0003.jpg"> 
+            </div>
+            <div class="card-action">
+                <a href="{% url 'winter' %}">Winter</a>
+            </div>
+        </div> 
+    </div>
+</div>
 {% endblock %}
-

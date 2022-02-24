@@ -25,8 +25,6 @@ def plants_detail(request, plant_id):
     plant = Plant.objects.get(id=plant_id)
     return render(request, 'plants/detail.html', { 'plant': plant})
 
-def seasons(request):
-    return render(request, 'plants/seasons/all.html')
 
 def spring(request):
     bloom = Plant.objects.all().filter(bloom_season='SPG')
